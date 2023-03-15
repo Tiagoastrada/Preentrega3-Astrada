@@ -1,0 +1,77 @@
+@use "variables";
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+h2{
+    text-transform: uppercase;
+}
+
+.navbar {
+    background-size: cover;
+    background-repeat: repeat;
+    .logo {
+        width: 25px;
+        border-radius: 10%;
+        transition: 0.5s;
+        &:hover {
+            width: 30px;
+        }
+    }
+}
+
+
+footer {
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: auto;
+    .footer-div {
+        padding-top: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        .footer-nav {
+            ul{
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                list-style: none;
+                text-decoration: none;
+                li a {
+                    color: white;
+                    text-decoration: none;
+                    font-family: variables.$font_type;
+                }
+            }
+        }
+        .footer-up img{
+            width: 90px;
+            height: 90px;
+        }
+    }
+    .email {
+        font-family: variables.$font_type;
+        color: white;
+    }
+    .footer-link {
+        text-align: end;
+        img {
+            width: 40px;
+            margin: 0.5vw;
+        }
+    }
+}
+
+@media screen and (min-width: 480px) {
+    footer .footer-div .footer-nav ul {
+        flex-direction: row;
+        li {
+            margin: 10px;
+        }
+    }
+}

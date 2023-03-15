@@ -1,0 +1,80 @@
+@use "variables";
+
+.register-title {
+    padding: 40px;
+    animation-name: expand;
+    animation-duration: 2s;
+
+    @keyframes expand {
+        20%{rotate: -20deg;}
+        40%{rotate: 20deg;}
+        60%{rotate: -20deg;}
+        80%{rotate: 0deg;}
+    }
+}
+
+.register-section {
+    padding: 10px;
+    .register-flex-container {
+        display: flex;
+        flex-direction: column;
+        background-color: variables.$box-color;
+        border-radius: 15px;
+        .register {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            border: variables.$border;
+            border-radius: 10px;
+            h2 {
+                text-align: center;
+                font-size: variables.$font_h2;
+                font-family: variables.$font_type;
+                b {
+                    color: darkmagenta;
+                }
+            }
+        }
+        .register-button {
+            padding: 5px;
+
+            .modal-body {
+                label{
+                    text-transform: uppercase;
+                    font-weight: 500;
+                    font-family: variables.$font_type;
+                }
+            }
+
+        }
+        .register-mid {
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}
+
+@media screen and (min-width: 480px) {
+    .register-section .register-flex-container .register{
+        padding: 20px;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .register-section .register-flex-container {
+            flex-direction: row;
+        }
+}
+
+@media screen and (min-width: 768px) {
+    .register-section {
+        padding: 30px;
+        .register-flex-container .register{
+            padding: 40px;
+        }
+    }
+}

@@ -1,0 +1,69 @@
+@use "variables";
+
+@mixin background-properties {
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-rows: auto 300px auto 300px auto 300px;
+
+    @each $block, $background-url in $b-i {
+        .div-#{$block} {
+            background-image: #{$background-url};
+            @include background-properties;
+        }
+    }
+
+    .flex-container {
+        padding: 20px;
+        justify-content: center;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        height: 300px;
+        font-family: variables.$font_type;
+        color: white;
+        h2 {
+            font-size: variables.$font_h2;
+        }
+        p {
+            font-size: variables.$font_h2 - 10px;
+        }
+    }
+}
+
+@media screen and (max-width: 320px) {
+
+    .grid-container {
+        display: grid;
+        grid-template-rows: auto 250px auto 250px auto 250px;
+        .flex-container {
+            height: 250px;
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .display-none {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 768px) {
+
+    .grid-container{
+        display: grid;
+        grid-template-rows: auto 500px auto 500px auto 500px;
+        .flex-container{
+            height: 500px;
+        }
+    }
+
+    .display-none img {
+        border-radius: 3%;
+        width: 45vw;
+        margin: 2vw;
+    }
+}

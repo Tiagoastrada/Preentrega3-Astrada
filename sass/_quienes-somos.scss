@@ -1,0 +1,93 @@
+@use "variables";
+
+.card-container {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    justify-content: center;
+    align-items: center;
+
+    .card {
+        background-color: variables.$box-color;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border-radius: 10px;
+        overflow: hidden;
+        margin-top: 25px;
+        margin-bottom: 25px;
+        padding: 0;
+        animation-name: rotate-card;
+        animation-duration: 0.5s;
+
+        @keyframes rotate-card {
+            20%{rotate: 2deg;}
+            40%{rotate: -2deg;}
+        }
+        
+        .card-text {
+            text-align: center;
+            height: auto;
+            margin: 10px;
+            font-family: variables.$font_type;
+            h2 {
+                font-size: variables.$font_h2;
+            }
+            p {
+                font-size: variables.$font_h2 - 15px;
+            }
+            ul {
+                text-align: left;
+            }
+        }
+        .card-img {
+            img {
+                width: 100vw;
+            }
+        }
+        
+        .offcanvas-body {
+            font-family: variables.$font_type;
+        }
+    }
+}
+
+@media screen and (max-width: 479px) {
+    .card-container .card .card-canva {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 480px) {
+    .card-container .card {
+        flex-direction: row;
+        .card-img {
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .card-canva {
+            display: flex;
+            align-items: center;
+            padding: 2px;
+        }
+        .card-text {
+            display: none;
+            font-family: variables.$font_type;
+        }
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .card-container {
+        .card {
+            margin: 20px;
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .card-container .card {
+        width: 80vw;
+    }
+}
